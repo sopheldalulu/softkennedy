@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+About | Sophel Dalu
+{% endblock %}
+
+{% block content %}
+
+<section class="about-page">
+    <div class="about-header">
+        <h1 class="gaegu-regular">About Me</h1>
+        <p class="gamja-flower-regular">heya there!!</p>
+    </div>
+    </section>
+
+    <div class="about-card">
+        <div class="about-text">
+            <h2 class="gaegu-regular"> A little bit about me...</h2>
+            <p class="gamja-flower-regular">I'm a 10th grader! I'm Tibetan American 
+            and participated in the Girls Who Code 2026 Summer Pathways 
+            Program.</p>
+            <p class="gamja-flower-regular">When I'm not coding, I love dancing, spending time
+                with my friends, and exploring new interests.
+                I'm especially interested in computer science and
+                finding ways technology can make a positive impact.</p>
+        </div>
+    </div>
+
+    <div class="about-sections">
+        <div class="about-box">
+            <h3 class="gaegu-regular"> Coding </h3>
+            <p class="gamja-flower-regular">I enjoy building websites and other fun things!</p>
+        </div>
+        <div class="about-box">
+            <h3 class="gaegu-regular"> n/a </h3>
+            <p class="gamja-flower-regular"> n/a</p>
+    </div>
+    <div class="about-project-link">
+        <h2 class="gaegu-regular">Want to see what I've built?</h2>
+        <p class="gamja-flower-regular">Check out my past coding projects!</p>
+        <a class="gamja-flower-regular" href="{{ url_for('projects') }}" class="project-button">
+            View Projects →
+        </a>
+    </div>
+
+
+{% endblock %}
