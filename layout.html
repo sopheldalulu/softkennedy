@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sophel Dalu{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gamja+Flower&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+
+<nav class="gaegu-regular">
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('projects') }}">Projects</a></li>
+        </ul>
+        </nav>
+
+<div class="page-content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<div id="custom-cursor"></div>
+
+<script>
+    const cursor = document.getElementById('custom-cursor');
+//follow mouse
+    document.addEventListener('mousemove', function(event) {
+        cursor.style.left = event.clientX + 'px';
+        cursor.style.top = event.clientY + 'px';
+
+        cursor.classList.add("cursor-visible");
+    });
+
+    const clickableElements = document.querySelectorAll(
+        'a, button, input, select, textarea, label, .project-button'
+    );
+    
+    clickableElements.forEach(function(element) {
+        element.addEventListener('mouseenter', function() {
+            cursor.classList.add('cursor-hover');
+        });
+        element.addEventListener('mouseleave', function() {
+            cursor.classList.remove('cursor-hover');
+        });
+    });
+
+    document.addEventListener('mousedown', function() {
+        cursor.classList.add('cursor-clicking');
+    });
+
+    document.addEventListener('mouseup', function() {
+        cursor.classList.remove('cursor-clicking');
+    });
+
+    document.addEventListener("mouseleave", function() {
+        cursor.classList.remove("cursor-visible");
+    })
+
+    document.addEventListener("mouseenter", function() {
+        //cursor will become visible again when mouse move
+    })
+</script>
+
+</body>
+</html>
