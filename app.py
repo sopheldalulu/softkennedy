@@ -1,5 +1,7 @@
 from flask import Flask, render_template  # type: ignore[import-not-found]
 
+app = Flask(__name__)
+
 
 class App(Flask):
     def __init__(self, *args, **kwargs):
